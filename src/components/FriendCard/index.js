@@ -1,12 +1,14 @@
 import React from "react";
 import "./style.css";
 
-FriendCard = props => (
-  <div className="card" onClick={() => props.clickCount(props.id)}>
-    <div className="img-container">
-      <img alt={props.name} src={props.image} />
+function FriendCard(props) {
+  return (
+    <div className="card">
+      <div className="img-container">
+        <img alt={props.name} src={props.image} />
+      </div>
     </div>
-  </div>
-);
+  );
+}
 
 export default FriendCard;
