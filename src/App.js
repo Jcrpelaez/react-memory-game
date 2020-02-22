@@ -11,12 +11,26 @@ class App extends Component {
     score: 0,
     highScore: 0
   };
+  
+  gameReset = () =>{}
+  
 
-  // handleIncrement increases this.state.count by 1
-  handleIncrement = () => {
-    // We always use the setState method to update a component's state
-    this.setState({ count: this.state.count + 1 });
-  };
+ clickCount = id => {
+   this.state.friends.find((o, i) => {
+     if (o.id === id) {
+       if (friends[i].count === 0) {
+         friends[i].count = friends[i].count + 1;
+         this.setState({ score: this.state.score + 1 }, function () {
+           console.log(this.state.score);
+         });
+         this.state.friends.sort(() => Math.random() - 0.5)
+         return true;
+       } else {
+         this.gameReset();
+       }
+     }
+   });
+ }
 
 
   // Map over this.state.friends and render a FriendCard component for each friend object
