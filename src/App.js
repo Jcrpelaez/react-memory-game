@@ -12,6 +12,13 @@ class App extends Component {
     highScore: 0
   };
 
+  // handleIncrement increases this.state.count by 1
+  handleIncrement = () => {
+    // We always use the setState method to update a component's state
+    this.setState({ count: this.state.count + 1 });
+  };
+
+
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
